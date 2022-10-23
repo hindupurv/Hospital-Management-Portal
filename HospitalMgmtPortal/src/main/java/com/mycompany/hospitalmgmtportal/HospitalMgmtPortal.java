@@ -13,6 +13,6 @@ public class HospitalMgmtPortal {
 
     public static void main(String[] args) {
         FullWindow fullWindow = new FullWindow();
-        fullWindow.createWindow();
+//        fullWindow.createWindow();
     }
 }
