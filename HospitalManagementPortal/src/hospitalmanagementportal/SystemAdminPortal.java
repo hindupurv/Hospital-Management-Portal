@@ -26,48 +26,135 @@ public class SystemAdminPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        SystemAdminPortalBackgroundImage = new javax.swing.JLabel();
+        PatientPageLabel = new javax.swing.JLabel();
+        NamePatientLabel = new javax.swing.JLabel();
+        NamePatientInput = new javax.swing.JTextField();
+        AgePatientLabel = new javax.swing.JLabel();
+        AgePatientInput = new javax.swing.JTextField();
+        GenderPatientLabel = new javax.swing.JLabel();
+        MaleGenderPatientButton = new javax.swing.JRadioButton();
+        FemaleGenderPatientButton = new javax.swing.JRadioButton();
+        ContactNumPatientLabel = new javax.swing.JLabel();
+        ContactNumPatientInput = new javax.swing.JTextField();
+        EmailPatientLabel = new javax.swing.JLabel();
+        EmailPatientInput = new javax.swing.JTextField();
+        SubmitButton = new javax.swing.JButton();
+        CloseButton = new javax.swing.JButton();
+        BackgroundAdminPortal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 720));
+        getContentPane().setLayout(null);
 
-        SystemAdminPortalBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/systemadminportalbackground.png"))); // NOI18N
+        PatientPageLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        PatientPageLabel.setText("Person Information Form:");
+        getContentPane().add(PatientPageLabel);
+        PatientPageLabel.setBounds(400, 210, 340, 32);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SystemAdminPortalBackgroundImage, javax.swing.GroupLayout.DEFAULT_SIZE, 1479, Short.MAX_VALUE)
-                .addContainerGap(1457, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SystemAdminPortalBackgroundImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(698, Short.MAX_VALUE))
-        );
+        NamePatientLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        NamePatientLabel.setText("Name:");
+        getContentPane().add(NamePatientLabel);
+        NamePatientLabel.setBounds(406, 270, 40, 32);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 21, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 200, Short.MAX_VALUE))
-        );
+        NamePatientInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamePatientInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NamePatientInput);
+        NamePatientInput.setBounds(460, 270, 150, 30);
+
+        AgePatientLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        AgePatientLabel.setText("Age: ");
+        getContentPane().add(AgePatientLabel);
+        AgePatientLabel.setBounds(420, 320, 30, 32);
+
+        AgePatientInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgePatientInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AgePatientInput);
+        AgePatientInput.setBounds(460, 320, 50, 30);
+
+        GenderPatientLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        GenderPatientLabel.setText("Gender:");
+        getContentPane().add(GenderPatientLabel);
+        GenderPatientLabel.setBounds(400, 370, 50, 32);
+
+        MaleGenderPatientButton.setText("Male");
+        getContentPane().add(MaleGenderPatientButton);
+        MaleGenderPatientButton.setBounds(460, 371, 60, 30);
+
+        FemaleGenderPatientButton.setText("Female");
+        FemaleGenderPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FemaleGenderPatientButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(FemaleGenderPatientButton);
+        FemaleGenderPatientButton.setBounds(540, 370, 80, 30);
+
+        ContactNumPatientLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ContactNumPatientLabel.setText("Contact Number: ");
+        getContentPane().add(ContactNumPatientLabel);
+        ContactNumPatientLabel.setBounds(350, 420, 100, 32);
+
+        ContactNumPatientInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactNumPatientInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ContactNumPatientInput);
+        ContactNumPatientInput.setBounds(460, 420, 150, 30);
+
+        EmailPatientLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        EmailPatientLabel.setText("Email:");
+        getContentPane().add(EmailPatientLabel);
+        EmailPatientLabel.setBounds(410, 470, 40, 32);
+
+        EmailPatientInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailPatientInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EmailPatientInput);
+        EmailPatientInput.setBounds(460, 470, 210, 30);
+
+        SubmitButton.setText("Submit");
+        getContentPane().add(SubmitButton);
+        SubmitButton.setBounds(380, 550, 100, 30);
+
+        CloseButton.setText("Close");
+        getContentPane().add(CloseButton);
+        CloseButton.setBounds(570, 550, 100, 30);
+
+        BackgroundAdminPortal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/systemadminportalbackground.png"))); // NOI18N
+        getContentPane().add(BackgroundAdminPortal);
+        BackgroundAdminPortal.setBounds(0, 0, 1469, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AgePatientInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgePatientInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgePatientInputActionPerformed
+
+    private void EmailPatientInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailPatientInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailPatientInputActionPerformed
+
+    private void FemaleGenderPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FemaleGenderPatientButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FemaleGenderPatientButtonActionPerformed
+
+    private void NamePatientInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamePatientInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamePatientInputActionPerformed
+
+    private void ContactNumPatientInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumPatientInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContactNumPatientInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,7 +192,20 @@ public class SystemAdminPortal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel SystemAdminPortalBackgroundImage;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField AgePatientInput;
+    private javax.swing.JLabel AgePatientLabel;
+    private javax.swing.JLabel BackgroundAdminPortal;
+    private javax.swing.JButton CloseButton;
+    private javax.swing.JTextField ContactNumPatientInput;
+    private javax.swing.JLabel ContactNumPatientLabel;
+    private javax.swing.JTextField EmailPatientInput;
+    private javax.swing.JLabel EmailPatientLabel;
+    private javax.swing.JRadioButton FemaleGenderPatientButton;
+    private javax.swing.JLabel GenderPatientLabel;
+    private javax.swing.JRadioButton MaleGenderPatientButton;
+    private javax.swing.JTextField NamePatientInput;
+    private javax.swing.JLabel NamePatientLabel;
+    private javax.swing.JLabel PatientPageLabel;
+    private javax.swing.JButton SubmitButton;
     // End of variables declaration//GEN-END:variables
 }

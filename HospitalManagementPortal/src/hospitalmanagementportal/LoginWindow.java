@@ -133,42 +133,42 @@ public class LoginWindow extends javax.swing.JFrame {
 
     private void SysAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SysAdminLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowAllUsers hospitalAdmin = new LoginWindowAllUsers();
-        hospitalAdmin.setSize(1500, 720);
-        hospitalAdmin.setVisible(true);
-        this.dispose();
+        LoginWindowSystemAdmin systemAdmin = new LoginWindowSystemAdmin();
+        systemAdmin.setSize(1500, 720);
+        systemAdmin.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_SysAdminLoginButtonActionPerformed
 
     private void PatientLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowAllUsers hospitalAdmin = new LoginWindowAllUsers();
-        hospitalAdmin.setSize(1500, 720);
-        hospitalAdmin.setVisible(true);
-        this.dispose();
+//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
+//        hospitalAdmin.setSize(1500, 720);
+//        hospitalAdmin.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_PatientLoginButtonActionPerformed
 
     private void DoctorLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowAllUsers hospitalAdmin = new LoginWindowAllUsers();
-        hospitalAdmin.setSize(1500, 720);
-        hospitalAdmin.setVisible(true);
-        this.dispose();
+//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
+//        hospitalAdmin.setSize(1500, 720);
+//        hospitalAdmin.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_DoctorLoginButtonActionPerformed
 
     private void HospitalAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalAdminLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowAllUsers hospitalAdmin = new LoginWindowAllUsers();
-        hospitalAdmin.setSize(1500, 720);
-        hospitalAdmin.setVisible(true);
-        this.dispose();
+//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
+//        hospitalAdmin.setSize(1500, 720);
+//        hospitalAdmin.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_HospitalAdminLoginButtonActionPerformed
 
     private void CommAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommAdminLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowAllUsers hospitalAdmin = new LoginWindowAllUsers();
-        hospitalAdmin.setSize(1500, 720);
-        hospitalAdmin.setVisible(true);
-        this.dispose();
+//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
+//        hospitalAdmin.setSize(1500, 720);
+//        hospitalAdmin.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_CommAdminLoginButtonActionPerformed
 
     /**

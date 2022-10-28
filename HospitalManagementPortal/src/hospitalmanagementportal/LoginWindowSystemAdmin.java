@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author ASUS
  */
-public class LoginWindowAllUsers extends javax.swing.JFrame {
+public class LoginWindowSystemAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form SystemAdminPortal
@@ -21,7 +21,7 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
     String password = "";
     String role = "";
     
-    public LoginWindowAllUsers() {
+    public LoginWindowSystemAdmin() {
         initComponents();
     }
 
@@ -57,9 +57,9 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
         UsernameLabel.setBounds(470, 290, 100, 40);
 
         PasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        PasswordLabel.setText("Login Portal:");
+        PasswordLabel.setText("System Admin Login Portal:");
         getContentPane().add(PasswordLabel);
-        PasswordLabel.setBounds(530, 100, 310, 130);
+        PasswordLabel.setBounds(430, 100, 510, 130);
 
         UsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,10 +113,10 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // TODO add your handling code here:
-        Person personInfo = new Person();
+        PersonDirectory personInfo = new PersonDirectory();
         username = UsernameTextField.getText().toLowerCase(); 
         password = PasswordTextField.getText();
-        role = personInfo.getRoleValue(username);
+        role = personInfo.getSysAdminRoleValue(username);
         
         //validation - null
         if(username.equals("") && password.equals(""))
@@ -147,7 +147,7 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
             }
         }
         
-        if(isKeyPresent == true && personInfo.getPasswordValue(username).equals(password))
+        if(isKeyPresent == true && personInfo.getSysAdminPasswordValue(username).equals(password))
         {
             JOptionPane.showMessageDialog(this, "Got Access!"); 
             CommonPortal commonPortal = new CommonPortal();
@@ -189,14 +189,30 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowAllUsers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowAllUsers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowAllUsers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowAllUsers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -217,7 +233,7 @@ public class LoginWindowAllUsers extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginWindowAllUsers().setVisible(true);
+                new LoginWindowSystemAdmin().setVisible(true);
             }
         });
     }

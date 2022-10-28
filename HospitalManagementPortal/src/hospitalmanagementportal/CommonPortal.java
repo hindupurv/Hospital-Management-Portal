@@ -26,24 +26,96 @@ public class CommonPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SearchTextField = new javax.swing.JTextField();
-        SearchButton = new javax.swing.JButton();
+        SearchPatientTextField = new javax.swing.JTextField();
+        SearchPatientVitalSignsButton = new javax.swing.JButton();
+        SearchPatientData = new javax.swing.JScrollPane();
+        SearchPatientTable = new javax.swing.JTable();
+        AddPatientAndVitalSignsButton = new javax.swing.JButton();
+        Note2 = new javax.swing.JLabel();
+        Note3 = new javax.swing.JLabel();
+        SearchDoctorButton = new javax.swing.JButton();
+        SearchDoctorDataTextField = new javax.swing.JTextField();
         SearchDoctorHospital = new javax.swing.JScrollPane();
         SearchDocHospTable = new javax.swing.JTable();
+        Note4 = new javax.swing.JLabel();
         AddDoctorButton = new javax.swing.JButton();
+        RemoveDoctorButton = new javax.swing.JButton();
+        Note5 = new javax.swing.JLabel();
+        SearchButton2 = new javax.swing.JButton();
         PatientPortalBackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 720));
         getContentPane().setLayout(null);
 
-        SearchTextField.setText("Write your search text here");
-        getContentPane().add(SearchTextField);
-        SearchTextField.setBounds(160, 40, 230, 22);
+        SearchPatientTextField.setText("Search Patient Data Here");
+        SearchPatientTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPatientTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SearchPatientTextField);
+        SearchPatientTextField.setBounds(630, 40, 280, 22);
 
-        SearchButton.setText("Search Button");
-        getContentPane().add(SearchButton);
-        SearchButton.setBounds(30, 40, 103, 23);
+        SearchPatientVitalSignsButton.setText("Search Patient Vital Signs");
+        SearchPatientVitalSignsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPatientVitalSignsButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SearchPatientVitalSignsButton);
+        SearchPatientVitalSignsButton.setBounds(440, 40, 170, 23);
+
+        SearchPatientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Patient Name", "Body temperature", "Pulse rate", "Respiration rate", "Blood pressure"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        SearchPatientData.setViewportView(SearchPatientTable);
+
+        getContentPane().add(SearchPatientData);
+        SearchPatientData.setBounds(440, 80, 470, 380);
+
+        AddPatientAndVitalSignsButton.setText("Add Patient and Encounter Vital Signs");
+        AddPatientAndVitalSignsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddPatientAndVitalSignsButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AddPatientAndVitalSignsButton);
+        AddPatientAndVitalSignsButton.setBounds(440, 510, 240, 23);
+
+        Note2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Note2.setText("The below two processes are for Hospital Administration:");
+        getContentPane().add(Note2);
+        Note2.setBounds(30, 480, 390, 20);
+
+        Note3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Note3.setText("Below you can search for Doctors:");
+        getContentPane().add(Note3);
+        Note3.setBounds(30, 10, 390, 20);
+
+        SearchDoctorButton.setText("Search Doctor Below");
+        getContentPane().add(SearchDoctorButton);
+        SearchDoctorButton.setBounds(30, 40, 140, 23);
+
+        SearchDoctorDataTextField.setText("Write your search text here");
+        getContentPane().add(SearchDoctorDataTextField);
+        SearchDoctorDataTextField.setBounds(180, 40, 210, 20);
 
         SearchDocHospTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,6 +141,11 @@ public class CommonPortal extends javax.swing.JFrame {
         getContentPane().add(SearchDoctorHospital);
         SearchDoctorHospital.setBounds(30, 80, 360, 380);
 
+        Note4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Note4.setText("Below Patients can look at their own Vital Signs:");
+        getContentPane().add(Note4);
+        Note4.setBounds(440, 10, 390, 20);
+
         AddDoctorButton.setText("Add Doctor");
         AddDoctorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +153,30 @@ public class CommonPortal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AddDoctorButton);
-        AddDoctorButton.setBounds(30, 490, 120, 23);
+        AddDoctorButton.setBounds(30, 510, 120, 23);
+
+        RemoveDoctorButton.setText("Remove Doctor");
+        RemoveDoctorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveDoctorButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RemoveDoctorButton);
+        RemoveDoctorButton.setBounds(170, 510, 120, 23);
+
+        Note5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Note5.setText("Doctor can add Patient Data using buttons below:");
+        getContentPane().add(Note5);
+        Note5.setBounds(440, 480, 390, 20);
+
+        SearchButton2.setText("Search Patient Vital Signs");
+        SearchButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SearchButton2);
+        SearchButton2.setBounds(440, 40, 170, 23);
 
         PatientPortalBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/communityadminbackgroundimage.jpg"))); // NOI18N
         PatientPortalBackgroundImage.setMaximumSize(new java.awt.Dimension(1500, 720));
@@ -88,24 +188,39 @@ public class CommonPortal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AddDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDoctorButtonActionPerformed
+    private void AddPatientAndVitalSignsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientAndVitalSignsButtonActionPerformed
         // TODO add your handling code here:
         
-        LoginWindowAllUsers hospitalAdminPortal = new LoginWindowAllUsers();
-        if(!hospitalAdminPortal.role.equals("hosp adm"))
-        {
-            AddDoctorButton.setEnabled(false);
-        }
-        else
-        {
-            //hospital admin
-            //this.dispose();
-            AddDoctorPortal addDoctorPortal = new AddDoctorPortal();
-            addDoctorPortal.setSize(1500, 720);
-            addDoctorPortal.setVisible(true);
-            //to add doctor call doctor class here
-        }
+    }//GEN-LAST:event_AddPatientAndVitalSignsButtonActionPerformed
+
+    private void AddDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDoctorButtonActionPerformed
+        // TODO add your handling code here:
+//        LoginWindowSystemAdmin loginWindowAllUsers = new LoginWindowSystemAdmin();
+//        AddDoctorPortal addDoctorPortal = new AddDoctorPortal();
+//        PersonDirectory person = new PersonDirectory();
+//        if(person.getRoleValue(loginWindowAllUsers.username).equals("hospital"))
+//        {
+//            addDoctorPortal.setSize(1500, 720);
+//            addDoctorPortal.setVisible(true);
+////            this.dispose();
+//        }
     }//GEN-LAST:event_AddDoctorButtonActionPerformed
+
+    private void RemoveDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveDoctorButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RemoveDoctorButtonActionPerformed
+
+    private void SearchPatientVitalSignsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPatientVitalSignsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchPatientVitalSignsButtonActionPerformed
+
+    private void SearchPatientTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPatientTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchPatientTextFieldActionPerformed
+
+    private void SearchButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,36 +249,6 @@ public class CommonPortal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -175,10 +260,21 @@ public class CommonPortal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddDoctorButton;
+    private javax.swing.JButton AddPatientAndVitalSignsButton;
+    private javax.swing.JLabel Note2;
+    private javax.swing.JLabel Note3;
+    private javax.swing.JLabel Note4;
+    private javax.swing.JLabel Note5;
     private javax.swing.JLabel PatientPortalBackgroundImage;
-    private javax.swing.JButton SearchButton;
+    private javax.swing.JButton RemoveDoctorButton;
+    private javax.swing.JButton SearchButton2;
     private javax.swing.JTable SearchDocHospTable;
+    private javax.swing.JButton SearchDoctorButton;
+    private javax.swing.JTextField SearchDoctorDataTextField;
     private javax.swing.JScrollPane SearchDoctorHospital;
-    private javax.swing.JTextField SearchTextField;
+    private javax.swing.JScrollPane SearchPatientData;
+    private javax.swing.JTable SearchPatientTable;
+    private javax.swing.JTextField SearchPatientTextField;
+    private javax.swing.JButton SearchPatientVitalSignsButton;
     // End of variables declaration//GEN-END:variables
 }
