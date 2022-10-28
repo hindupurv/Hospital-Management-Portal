@@ -17,8 +17,12 @@ public class AddDoctorPortal extends javax.swing.JFrame {
     /**
      * Creates new form SystemAdminPortal
      */
-    String DoctorName = "";
-    String DoctorContact = "";
+    String doctorName = "";
+    String doctorContact = "";
+    String doctorHospitalName = "";
+    String doctorCommunityName = "";
+    
+    boolean submitDoctorData = false;
     
     public AddDoctorPortal() {
         initComponents();
@@ -34,15 +38,15 @@ public class AddDoctorPortal extends javax.swing.JFrame {
     private void initComponents() {
 
         DoctorNameLabel = new javax.swing.JLabel();
-        DoctorContactLabel = new javax.swing.JLabel();
         DoctorNameInput = new javax.swing.JTextField();
+        DoctorContactLabel = new javax.swing.JLabel();
         DoctorContactInput = new javax.swing.JTextField();
+        DoctorHospitalLabel = new javax.swing.JLabel();
+        DoctorHospitalInput = new javax.swing.JTextField();
+        DoctorCommunityLabel = new javax.swing.JLabel();
+        DoctorCommunityInput = new javax.swing.JTextField();
         SubmitDoctorButton = new javax.swing.JButton();
         CloseDoctorButton = new javax.swing.JButton();
-        DoctorContactLabel1 = new javax.swing.JLabel();
-        DoctorContactInput1 = new javax.swing.JTextField();
-        DoctorContactLabel2 = new javax.swing.JLabel();
-        DoctorContactInput2 = new javax.swing.JTextField();
         PatientPortalBackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,11 +57,6 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         getContentPane().add(DoctorNameLabel);
         DoctorNameLabel.setBounds(420, 70, 110, 40);
 
-        DoctorContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorContactLabel.setText("Doctor's Community Name: ");
-        getContentPane().add(DoctorContactLabel);
-        DoctorContactLabel.setBounds(340, 220, 190, 40);
-
         DoctorNameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DoctorNameInputActionPerformed(evt);
@@ -66,13 +65,44 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         getContentPane().add(DoctorNameInput);
         DoctorNameInput.setBounds(530, 80, 150, 22);
 
+        DoctorContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorContactLabel.setText("Doctor's Contact Number: ");
+        getContentPane().add(DoctorContactLabel);
+        DoctorContactLabel.setBounds(350, 120, 180, 40);
+
         DoctorContactInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DoctorContactInputActionPerformed(evt);
             }
         });
         getContentPane().add(DoctorContactInput);
-        DoctorContactInput.setBounds(530, 230, 150, 22);
+        DoctorContactInput.setBounds(530, 130, 150, 22);
+
+        DoctorHospitalLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorHospitalLabel.setText("Doctor's Hospital Name: ");
+        getContentPane().add(DoctorHospitalLabel);
+        DoctorHospitalLabel.setBounds(360, 170, 170, 40);
+
+        DoctorHospitalInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorHospitalInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DoctorHospitalInput);
+        DoctorHospitalInput.setBounds(530, 180, 150, 22);
+
+        DoctorCommunityLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorCommunityLabel.setText("Doctor's Community Name: ");
+        getContentPane().add(DoctorCommunityLabel);
+        DoctorCommunityLabel.setBounds(340, 220, 190, 40);
+
+        DoctorCommunityInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorCommunityInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DoctorCommunityInput);
+        DoctorCommunityInput.setBounds(530, 230, 150, 22);
 
         SubmitDoctorButton.setText("Submit");
         SubmitDoctorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,34 +114,13 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         SubmitDoctorButton.setBounds(490, 290, 75, 30);
 
         CloseDoctorButton.setText("Close");
+        CloseDoctorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseDoctorButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(CloseDoctorButton);
         CloseDoctorButton.setBounds(640, 290, 72, 30);
-
-        DoctorContactLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorContactLabel1.setText("Doctor's Contact Number: ");
-        getContentPane().add(DoctorContactLabel1);
-        DoctorContactLabel1.setBounds(350, 120, 180, 40);
-
-        DoctorContactInput1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorContactInput1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DoctorContactInput1);
-        DoctorContactInput1.setBounds(530, 130, 150, 22);
-
-        DoctorContactLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorContactLabel2.setText("Doctor's Hospital Name: ");
-        getContentPane().add(DoctorContactLabel2);
-        DoctorContactLabel2.setBounds(360, 170, 170, 40);
-
-        DoctorContactInput2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorContactInput2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DoctorContactInput2);
-        DoctorContactInput2.setBounds(530, 180, 150, 22);
 
         PatientPortalBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/backgroundpatient.png"))); // NOI18N
         getContentPane().add(PatientPortalBackgroundImage);
@@ -124,73 +133,49 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DoctorNameInputActionPerformed
 
+    private void DoctorCommunityInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorCommunityInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DoctorCommunityInputActionPerformed
+
+    private void SubmitDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitDoctorButtonActionPerformed
+        // TODO add your handling code here:
+        doctorName = DoctorNameInput.getText(); 
+        doctorContact = DoctorCommunityInput.getText();
+        doctorHospitalName = DoctorHospitalInput.getText();
+        doctorCommunityName = DoctorCommunityInput.getText();
+        
+        
+        //validation - null
+        if(doctorName.equals("") || doctorContact.equals("") 
+                || doctorHospitalName.equals("") || doctorCommunityName.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Enter Values All fields");
+        }
+        //after doctor data submit
+        if(!doctorName.equals("") && !doctorContact.equals("") 
+                && !doctorHospitalName.equals("") && !doctorCommunityName.equals(""))
+        {
+            submitDoctorData = true;
+            JOptionPane.showMessageDialog(this, "Doctor's Data Submitted!"); 
+        } 
+        
+        if (submitDoctorData == true)
+            this.dispose();
+    }//GEN-LAST:event_SubmitDoctorButtonActionPerformed
+
     private void DoctorContactInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorContactInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DoctorContactInputActionPerformed
 
-    private void SubmitDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitDoctorButtonActionPerformed
+    private void DoctorHospitalInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorHospitalInputActionPerformed
         // TODO add your handling code here:
-        DoctorName = DoctorNameInput.getText(); 
-        DoctorContact = DoctorContactInput.getText();
-        
-//        Doctor doctor = new Doctor(); 
-//        password = PasswordTextField.getText();
-//        role = personInfo.getRoleValue(username);
-//        
-//        //validation - null
-//        if(username.equals("") && password.equals(""))
-//        {
-//            JOptionPane.showMessageDialog(this, "Enter Username and Password");
-//        }
-//        else if(!(username.equals("")) && password.equals(""))
-//        {
-//            JOptionPane.showMessageDialog(this, "Enter Password");        
-//        }
-//        else if(username.equals("") && !(password.equals("")))
-//        {
-//            JOptionPane.showMessageDialog(this, "Enter Username");    
-//        }
-//        
-//        System.out.println("username "+username);
-//        System.out.println("password "+password);
-//        
-//        //validation - actual data
-//        Iterator<Map.Entry<String, String> > iterator = personInfo.loginInfo.entrySet().iterator();
-//        boolean isKeyPresent = false;
-//        while (iterator.hasNext()) 
-//        {
-//            Map.Entry<String, String> entry = iterator.next();
-//            if(username.equals(entry.getKey()))
-//            {
-//                isKeyPresent = true;
-//            }
-//        }
-//        
-//        if(isKeyPresent == true && personInfo.getPasswordValue(username).equals(password))
-//        {
-//            JOptionPane.showMessageDialog(this, "Got Access!"); 
-//            CommonPortal commonPortal = new CommonPortal();
-//            commonPortal.setSize(1500, 720);
-//            commonPortal.setVisible(true);
-//            this.dispose();
-//        }
-//        else
-//        {
-//            JOptionPane.showMessageDialog(this, "Login Unsuccessful!");
-//            this.dispose();
-//
-//        }
-//    }   
-        
-    }//GEN-LAST:event_SubmitDoctorButtonActionPerformed
+    }//GEN-LAST:event_DoctorHospitalInputActionPerformed
 
-    private void DoctorContactInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorContactInput1ActionPerformed
+    private void CloseDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseDoctorButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DoctorContactInput1ActionPerformed
-
-    private void DoctorContactInput2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorContactInput2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DoctorContactInput2ActionPerformed
+        
+        this.dispose();
+    }//GEN-LAST:event_CloseDoctorButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,12 +217,12 @@ public class AddDoctorPortal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CloseDoctorButton;
+    private javax.swing.JTextField DoctorCommunityInput;
+    private javax.swing.JLabel DoctorCommunityLabel;
     private javax.swing.JTextField DoctorContactInput;
-    private javax.swing.JTextField DoctorContactInput1;
-    private javax.swing.JTextField DoctorContactInput2;
     private javax.swing.JLabel DoctorContactLabel;
-    private javax.swing.JLabel DoctorContactLabel1;
-    private javax.swing.JLabel DoctorContactLabel2;
+    private javax.swing.JTextField DoctorHospitalInput;
+    private javax.swing.JLabel DoctorHospitalLabel;
     private javax.swing.JTextField DoctorNameInput;
     private javax.swing.JLabel DoctorNameLabel;
     private javax.swing.JLabel PatientPortalBackgroundImage;
