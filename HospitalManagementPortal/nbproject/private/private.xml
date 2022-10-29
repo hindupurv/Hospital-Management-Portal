@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/Person.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/LoginWindow.java</file>
             <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/Community.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/LoginWindowAllUsers.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/SystemAdminLoginWindow.java</file>
             <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/AddDoctorPortal.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/CommonPortal.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/Hospital.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/Doctor.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/City.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/CommunityAdminLoginWindow.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/JavaSwingProject2/JavaSwingApplication_HospitalPortal/HospitalManagementPortal/src/hospitalmanagementportal/AddCommunityPortal.java</file>
         </group>
     </open-files>
 </project-private>

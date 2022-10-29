@@ -15,18 +15,18 @@ public class Doctor {
     private String contactNumDoc = "";
     private String hospitalName = "";
     private String contactNumHospital = "";
-    private Hospital hospital = null;
+//    private Hospital hospital = null;
 //    City city = new City();
 //    Community community = new Community();
     
-    public Doctor(String name, String contactNumDoc, String hospitalName, String contactNumHospital)
-    {
-        this.name = name;
-        this.contactNumDoc = contactNumDoc;
-        this.hospitalName = hospitalName;
-        this.contactNumHospital = contactNumHospital;
-        hospital = new Hospital(hospitalName, contactNumHospital);
-    }
+//    public Doctor(String name, String contactNumDoc, String hospitalName, String contactNumHospital)
+//    {
+//        this.name = name;
+//        this.contactNumDoc = contactNumDoc;
+//        this.hospitalName = hospitalName;
+//        this.contactNumHospital = contactNumHospital;
+//        hospital = new Hospital(hospitalName, contactNumHospital);
+//    }
 
     /**
      * @return the Name

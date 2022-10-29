@@ -12,17 +12,19 @@ import javax.swing.JOptionPane;
  *
  * @author ASUS
  */
-public class LoginWindowSystemAdmin extends javax.swing.JFrame {
+public class PatientLoginWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form SystemAdminPortal
      */
-    String username = "";
+    String email = "";
     String password = "";
     String role = "";
+    PatientDirectory patientDirectory = null;
     
-    public LoginWindowSystemAdmin() {
+    public PatientLoginWindow() {
         initComponents();
+        patientDirectory = new PatientDirectory();
     }
 
     /**
@@ -34,40 +36,48 @@ public class LoginWindowSystemAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LoginPortalLabel = new javax.swing.JLabel();
-        UsernameLabel = new javax.swing.JLabel();
+        EmailLabel = new javax.swing.JLabel();
         PasswordLabel = new javax.swing.JLabel();
-        UsernameTextField = new javax.swing.JTextField();
+        PageLabel = new javax.swing.JLabel();
+        EmailTextField = new javax.swing.JTextField();
+        PasswordTextField = new javax.swing.JPasswordField();
         BackButton = new javax.swing.JButton();
         SubmitButton = new javax.swing.JButton();
-        PasswordTextField = new javax.swing.JPasswordField();
         HospitalPortalBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        LoginPortalLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        LoginPortalLabel.setText("Username:");
-        getContentPane().add(LoginPortalLabel);
-        LoginPortalLabel.setBounds(470, 230, 110, 60);
+        EmailLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        EmailLabel.setText("Email:");
+        getContentPane().add(EmailLabel);
+        EmailLabel.setBounds(500, 230, 60, 60);
 
-        UsernameLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        UsernameLabel.setText("Password:");
-        getContentPane().add(UsernameLabel);
-        UsernameLabel.setBounds(470, 290, 100, 40);
-
-        PasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        PasswordLabel.setText("System Admin Login Portal:");
+        PasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PasswordLabel.setText("Password:");
         getContentPane().add(PasswordLabel);
-        PasswordLabel.setBounds(430, 100, 510, 130);
+        PasswordLabel.setBounds(470, 290, 100, 40);
 
-        UsernameTextField.addActionListener(new java.awt.event.ActionListener() {
+        PageLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        PageLabel.setText("Patient Login Portal:");
+        getContentPane().add(PageLabel);
+        PageLabel.setBounds(430, 100, 510, 130);
+
+        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameTextFieldActionPerformed(evt);
+                EmailTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(UsernameTextField);
-        UsernameTextField.setBounds(570, 250, 190, 30);
+        getContentPane().add(EmailTextField);
+        EmailTextField.setBounds(570, 250, 190, 30);
+
+        PasswordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasswordTextField);
+        PasswordTextField.setBounds(570, 300, 190, 30);
 
         BackButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         BackButton.setText("Back");
@@ -87,17 +97,9 @@ public class LoginWindowSystemAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SubmitButton);
-        SubmitButton.setBounds(520, 380, 150, 32);
+        SubmitButton.setBounds(610, 360, 110, 32);
 
-        PasswordTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(PasswordTextField);
-        PasswordTextField.setBounds(570, 300, 190, 30);
-
-        HospitalPortalBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/hospitaladminbackgroundimage.jpg"))); // NOI18N
+        HospitalPortalBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hospitaladminbackgroundimage.jpg"))); // NOI18N
         HospitalPortalBackground.setMaximumSize(new java.awt.Dimension(1500, 720));
         HospitalPortalBackground.setMinimumSize(new java.awt.Dimension(1500, 720));
         HospitalPortalBackground.setPreferredSize(new java.awt.Dimension(1500, 720));
@@ -107,59 +109,37 @@ public class LoginWindowSystemAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
+    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameTextFieldActionPerformed
+    }//GEN-LAST:event_EmailTextFieldActionPerformed
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // TODO add your handling code here:
         PersonDirectory personInfo = new PersonDirectory();
-        username = UsernameTextField.getText().toLowerCase(); 
+        email = EmailTextField.getText().toLowerCase(); 
         password = PasswordTextField.getText();
-        role = personInfo.getSysAdminRoleValue(username);
         
         //validation - null
-        if(username.equals("") && password.equals(""))
+        if(email.equals("") && password.equals(""))
         {
             JOptionPane.showMessageDialog(this, "Enter Username and Password");
         }
-        else if(!(username.equals("")) && password.equals(""))
+        else if(!(email.equals("")) && password.equals(""))
         {
             JOptionPane.showMessageDialog(this, "Enter Password");        
         }
-        else if(username.equals("") && !(password.equals("")))
+        else if(email.equals("") && !(password.equals("")))
         {
             JOptionPane.showMessageDialog(this, "Enter Username");    
         }
         
-        System.out.println("username "+username);
+        System.out.println("username "+email);
         System.out.println("password "+password);
         
         //validation - actual data
-        Iterator<Map.Entry<String, String> > iterator = personInfo.loginInfo.entrySet().iterator();
-        boolean isKeyPresent = false;
-        while (iterator.hasNext()) 
+        if(patientDirectory.map.containsKey(email))
         {
-            Map.Entry<String, String> entry = iterator.next();
-            if(username.equals(entry.getKey()))
-            {
-                isKeyPresent = true;
-            }
-        }
-        
-        if(isKeyPresent == true && personInfo.getSysAdminPasswordValue(username).equals(password))
-        {
-            JOptionPane.showMessageDialog(this, "Got Access!"); 
-            CommonPortal commonPortal = new CommonPortal();
-            commonPortal.setSize(1500, 720);
-            commonPortal.setVisible(true);
-            this.dispose();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Login Unsuccessful!");
-            this.dispose();
-
+            //Search Doc window
         }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
@@ -169,7 +149,7 @@ public class LoginWindowSystemAdmin extends javax.swing.JFrame {
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
-//            this.dispose();
+            this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
@@ -189,63 +169,33 @@ public class LoginWindowSystemAdmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PatientLoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PatientLoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PatientLoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginWindowSystemAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PatientLoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginWindowSystemAdmin().setVisible(true);
+                new PatientLoginWindow().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
+    private javax.swing.JLabel EmailLabel;
+    private javax.swing.JTextField EmailTextField;
     private javax.swing.JLabel HospitalPortalBackground;
-    private javax.swing.JLabel LoginPortalLabel;
+    private javax.swing.JLabel PageLabel;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JPasswordField PasswordTextField;
     private javax.swing.JButton SubmitButton;
-    private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JTextField UsernameTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,36 +30,31 @@ public class LoginWindow extends javax.swing.JFrame {
         SysAdminLoginImage = new javax.swing.JLabel();
         PatientLoginImage = new javax.swing.JLabel();
         DoctorLoginImage = new javax.swing.JLabel();
-        HospitalAdminLoginImage = new javax.swing.JLabel();
         CommunityAdminLoginImage = new javax.swing.JLabel();
         CommAdminLoginButton = new javax.swing.JButton();
         SysAdminLoginButton = new javax.swing.JButton();
         PatientLoginButton = new javax.swing.JButton();
         DoctorLoginButton = new javax.swing.JButton();
-        HospitalAdminLoginButton = new javax.swing.JButton();
+        CloseLoginWindowButton = new javax.swing.JButton();
         LoginBackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
-        SysAdminLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/systemadminlogin.png"))); // NOI18N
+        SysAdminLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/systemadminlogin.png"))); // NOI18N
         jPanel1.add(SysAdminLoginImage);
-        SysAdminLoginImage.setBounds(30, 220, 360, 330);
+        SysAdminLoginImage.setBounds(100, 270, 230, 240);
 
-        PatientLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/patientloginimage.png"))); // NOI18N
+        PatientLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/patientloginimage.png"))); // NOI18N
         jPanel1.add(PatientLoginImage);
-        PatientLoginImage.setBounds(280, 260, 230, 240);
+        PatientLoginImage.setBounds(390, 280, 230, 240);
 
-        DoctorLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/doctorloginimage.png"))); // NOI18N
+        DoctorLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/doctorloginimage.png"))); // NOI18N
         jPanel1.add(DoctorLoginImage);
-        DoctorLoginImage.setBounds(530, 270, 240, 240);
+        DoctorLoginImage.setBounds(710, 270, 240, 240);
 
-        HospitalAdminLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/hospitaladminloginimage.jpg"))); // NOI18N
-        jPanel1.add(HospitalAdminLoginImage);
-        HospitalAdminLoginImage.setBounds(770, 270, 210, 230);
-
-        CommunityAdminLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/communityadminloginimage.jpg"))); // NOI18N
+        CommunityAdminLoginImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/communityadminloginimage.jpg"))); // NOI18N
         jPanel1.add(CommunityAdminLoginImage);
         CommunityAdminLoginImage.setBounds(1010, 270, 250, 230);
 
@@ -79,7 +74,7 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SysAdminLoginButton);
-        SysAdminLoginButton.setBounds(70, 530, 130, 30);
+        SysAdminLoginButton.setBounds(150, 530, 130, 30);
 
         PatientLoginButton.setText("PATIENT");
         PatientLoginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +83,7 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(PatientLoginButton);
-        PatientLoginButton.setBounds(350, 530, 114, 30);
+        PatientLoginButton.setBounds(460, 530, 114, 30);
 
         DoctorLoginButton.setText("DOCTOR");
         DoctorLoginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -97,18 +92,18 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(DoctorLoginButton);
-        DoctorLoginButton.setBounds(590, 530, 114, 30);
+        DoctorLoginButton.setBounds(770, 530, 114, 30);
 
-        HospitalAdminLoginButton.setText("HOSPITAL ADMIN");
-        HospitalAdminLoginButton.addActionListener(new java.awt.event.ActionListener() {
+        CloseLoginWindowButton.setText("Close");
+        CloseLoginWindowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HospitalAdminLoginButtonActionPerformed(evt);
+                CloseLoginWindowButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(HospitalAdminLoginButton);
-        HospitalAdminLoginButton.setBounds(810, 530, 140, 30);
+        jPanel1.add(CloseLoginWindowButton);
+        CloseLoginWindowButton.setBounds(1040, 140, 90, 40);
 
-        LoginBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/hmbackground.png"))); // NOI18N
+        LoginBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hmbackground.png"))); // NOI18N
         jPanel1.add(LoginBackgroundImage);
         LoginBackgroundImage.setBounds(0, 20, 1500, 600);
 
@@ -133,43 +128,40 @@ public class LoginWindow extends javax.swing.JFrame {
 
     private void SysAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SysAdminLoginButtonActionPerformed
         // TODO add your handling code here:
-        LoginWindowSystemAdmin systemAdmin = new LoginWindowSystemAdmin();
+        SystemAdminLoginWindow systemAdmin = new SystemAdminLoginWindow();
         systemAdmin.setSize(1500, 720);
         systemAdmin.setVisible(true);
-//        this.dispose();
+//        this.dispose(); use on back button
     }//GEN-LAST:event_SysAdminLoginButtonActionPerformed
 
     private void PatientLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientLoginButtonActionPerformed
         // TODO add your handling code here:
-//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
-//        hospitalAdmin.setSize(1500, 720);
-//        hospitalAdmin.setVisible(true);
-//        this.dispose();
+        PatientLoginWindow patientLoginWindow = new PatientLoginWindow();
+        patientLoginWindow.setSize(1500, 720);
+        patientLoginWindow.setVisible(true);
+//        this.dispose(); use on back button
     }//GEN-LAST:event_PatientLoginButtonActionPerformed
 
     private void DoctorLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorLoginButtonActionPerformed
         // TODO add your handling code here:
-//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
+//        SystemAdminLoginWindow hospitalAdmin = new SystemAdminLoginWindow();
 //        hospitalAdmin.setSize(1500, 720);
 //        hospitalAdmin.setVisible(true);
 //        this.dispose();
     }//GEN-LAST:event_DoctorLoginButtonActionPerformed
 
-    private void HospitalAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalAdminLoginButtonActionPerformed
-        // TODO add your handling code here:
-//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
-//        hospitalAdmin.setSize(1500, 720);
-//        hospitalAdmin.setVisible(true);
-//        this.dispose();
-    }//GEN-LAST:event_HospitalAdminLoginButtonActionPerformed
-
     private void CommAdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommAdminLoginButtonActionPerformed
         // TODO add your handling code here:
-//        LoginWindowSystemAdmin hospitalAdmin = new LoginWindowSystemAdmin();
-//        hospitalAdmin.setSize(1500, 720);
-//        hospitalAdmin.setVisible(true);
+        CommunityAdminLoginWindow commAdmin = new CommunityAdminLoginWindow();
+        commAdmin.setSize(1500, 720);
+        commAdmin.setVisible(true);
 //        this.dispose();
     }//GEN-LAST:event_CommAdminLoginButtonActionPerformed
+
+    private void CloseLoginWindowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseLoginWindowButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_CloseLoginWindowButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,12 +199,11 @@ public class LoginWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CloseLoginWindowButton;
     private javax.swing.JButton CommAdminLoginButton;
     private javax.swing.JLabel CommunityAdminLoginImage;
     private javax.swing.JButton DoctorLoginButton;
     private javax.swing.JLabel DoctorLoginImage;
-    private javax.swing.JButton HospitalAdminLoginButton;
-    private javax.swing.JLabel HospitalAdminLoginImage;
     private javax.swing.JLabel LoginBackgroundImage;
     private javax.swing.JButton PatientLoginButton;
     private javax.swing.JLabel PatientLoginImage;

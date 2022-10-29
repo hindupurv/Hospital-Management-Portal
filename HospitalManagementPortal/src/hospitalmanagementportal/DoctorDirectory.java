@@ -15,13 +15,13 @@ public class DoctorDirectory
     ArrayList<ArrayList<String> > doctorDir = new ArrayList<ArrayList<String>>();
     ArrayList<String> doctorData = new ArrayList<String>();
     
-    void addDoctorName(String name)
+    protected void addDoctorDataInDirectory(String name, String contactNumDoc, String doctorHospitalName, String doctorCommunityName)
     {
         doctorData.add(name);
+        doctorData.add(contactNumDoc);
+        doctorData.add(doctorHospitalName);
+        doctorData.add(doctorCommunityName);
+        doctorDir.add(doctorData);
     }
     
-    void addContactNumberDoctor(String contactNumDoc)
-    {
-        doctorData.add(contactNumDoc);
-    }
 }
