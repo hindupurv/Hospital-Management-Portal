@@ -19,19 +19,19 @@ public class PersonDirectory
     
     static String user1 = "sysadm123";
 //    static String user2 = "docdoc";
-//    static String user3 = "patient12";
+    static String user3 = "pat12";
 //    static String user4 = "commadm123";
 //    static String user5 = "hospadm123";
     
     String role1 = "sys adm";
 //    String role2 = "doc";
-//    String role3 = "patient";
+    String role3 = "patient";
 //    String role4 = "comm adm";
 //    String role5 = "hosp adm";
     
     String pass1 = "sysadm";
 //    String pass2 = "doctor";
-//    String pass3 = "patient";
+    String pass3 = "pat";
 //    String pass4 = "commadm";
 //    String pass5 = "hospadm";
    

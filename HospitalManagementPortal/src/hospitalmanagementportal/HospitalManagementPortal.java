@@ -17,4 +17,9 @@ public class HospitalManagementPortal {
         // TODO code application logic here
     }
     
+    // login window - sys admin login window - sys admin tasks - add community admin portal
+    // community dir - admin added
+    // community add - community admin can do it
+    // system admin login - system tasks portal 
+    // AddDoctorPortal - community dropdown
 }

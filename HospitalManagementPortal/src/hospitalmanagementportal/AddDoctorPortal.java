@@ -6,6 +6,7 @@ package hospitalmanagementportal;
 
 import java.util.Iterator;
 import java.util.Map;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +22,7 @@ public class AddDoctorPortal extends javax.swing.JFrame {
     String doctorContact = "";
     String doctorHospitalName = "";
     String doctorCommunityName = "";
+    DoctorDirectory doctorDirectory = new DoctorDirectory();
     
     boolean submitDoctorData = false;
     
@@ -37,17 +39,23 @@ public class AddDoctorPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PatientPageLabel = new javax.swing.JLabel();
         DoctorNameLabel = new javax.swing.JLabel();
-        DoctorNameInput = new javax.swing.JTextField();
+        DoctorCommunityInput = new javax.swing.JTextField();
         DoctorContactLabel = new javax.swing.JLabel();
-        DoctorContactInput = new javax.swing.JTextField();
+        DoctorCommunityInput1 = new javax.swing.JTextField();
+        DoctorCommunityLabel = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        DoctorCommunityLabel1 = new javax.swing.JLabel();
+        DoctorNameInput = new javax.swing.JTextField();
         DoctorHospitalLabel = new javax.swing.JLabel();
         DoctorHospitalInput = new javax.swing.JTextField();
-        DoctorCommunityLabel = new javax.swing.JLabel();
-        DoctorCommunityInput = new javax.swing.JTextField();
         SubmitDoctorButton = new javax.swing.JButton();
         CloseDoctorButton = new javax.swing.JButton();
         PatientPortalBackgroundImage = new javax.swing.JLabel();
+
+        PatientPageLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        PatientPageLabel.setText("Doctor Information Form:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -55,46 +63,7 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         DoctorNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         DoctorNameLabel.setText("Doctor's Name: ");
         getContentPane().add(DoctorNameLabel);
-        DoctorNameLabel.setBounds(420, 70, 110, 40);
-
-        DoctorNameInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorNameInputActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DoctorNameInput);
-        DoctorNameInput.setBounds(530, 80, 150, 22);
-
-        DoctorContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorContactLabel.setText("Doctor's Contact Number: ");
-        getContentPane().add(DoctorContactLabel);
-        DoctorContactLabel.setBounds(350, 120, 180, 40);
-
-        DoctorContactInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorContactInputActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DoctorContactInput);
-        DoctorContactInput.setBounds(530, 130, 150, 22);
-
-        DoctorHospitalLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorHospitalLabel.setText("Doctor's Hospital Name: ");
-        getContentPane().add(DoctorHospitalLabel);
-        DoctorHospitalLabel.setBounds(360, 170, 170, 40);
-
-        DoctorHospitalInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorHospitalInputActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DoctorHospitalInput);
-        DoctorHospitalInput.setBounds(530, 180, 150, 22);
-
-        DoctorCommunityLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DoctorCommunityLabel.setText("Doctor's Community Name: ");
-        getContentPane().add(DoctorCommunityLabel);
-        DoctorCommunityLabel.setBounds(340, 220, 190, 40);
+        DoctorNameLabel.setBounds(360, 200, 110, 30);
 
         DoctorCommunityInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +71,60 @@ public class AddDoctorPortal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(DoctorCommunityInput);
-        DoctorCommunityInput.setBounds(530, 230, 150, 22);
+        DoctorCommunityInput.setBounds(470, 200, 210, 30);
+
+        DoctorContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorContactLabel.setText("Doctor's Contact Number: ");
+        getContentPane().add(DoctorContactLabel);
+        DoctorContactLabel.setBounds(290, 240, 180, 40);
+
+        DoctorCommunityInput1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorCommunityInput1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DoctorCommunityInput1);
+        DoctorCommunityInput1.setBounds(470, 240, 210, 30);
+
+        DoctorCommunityLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorCommunityLabel.setText("Email:");
+        getContentPane().add(DoctorCommunityLabel);
+        DoctorCommunityLabel.setBounds(420, 270, 50, 40);
+
+        jComboBox1.setSelectedItem(Community.communityData);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(470, 360, 210, 30);
+
+        DoctorCommunityLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorCommunityLabel1.setText("Doctor's Community Name: ");
+        getContentPane().add(DoctorCommunityLabel1);
+        DoctorCommunityLabel1.setBounds(280, 360, 190, 40);
+
+        DoctorNameInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorNameInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DoctorNameInput);
+        DoctorNameInput.setBounds(470, 280, 210, 30);
+
+        DoctorHospitalLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DoctorHospitalLabel.setText("Doctor's Hospital Name: ");
+        getContentPane().add(DoctorHospitalLabel);
+        DoctorHospitalLabel.setBounds(300, 310, 170, 40);
+
+        DoctorHospitalInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorHospitalInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DoctorHospitalInput);
+        DoctorHospitalInput.setBounds(470, 320, 210, 30);
 
         SubmitDoctorButton.setText("Submit");
         SubmitDoctorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +133,7 @@ public class AddDoctorPortal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SubmitDoctorButton);
-        SubmitDoctorButton.setBounds(490, 290, 75, 30);
+        SubmitDoctorButton.setBounds(400, 450, 75, 30);
 
         CloseDoctorButton.setText("Close");
         CloseDoctorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +142,11 @@ public class AddDoctorPortal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CloseDoctorButton);
-        CloseDoctorButton.setBounds(640, 290, 72, 30);
+        CloseDoctorButton.setBounds(580, 450, 72, 30);
 
-        PatientPortalBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanagementportal/backgroundpatient.png"))); // NOI18N
+        PatientPortalBackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/systemadminportalbackground.png"))); // NOI18N
         getContentPane().add(PatientPortalBackgroundImage);
-        PatientPortalBackgroundImage.setBounds(0, 0, 1500, 715);
+        PatientPortalBackgroundImage.setBounds(-30, 0, 1469, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,12 +182,11 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         } 
         
         if (submitDoctorData == true)
+        {
+            doctorDirectory.addDoctorDataInDirectory(doctorName, doctorName, doctorHospitalName, doctorCommunityName);
             this.dispose();
+        }
     }//GEN-LAST:event_SubmitDoctorButtonActionPerformed
-
-    private void DoctorContactInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorContactInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DoctorContactInputActionPerformed
 
     private void DoctorHospitalInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorHospitalInputActionPerformed
         // TODO add your handling code here:
@@ -176,6 +197,15 @@ public class AddDoctorPortal extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_CloseDoctorButtonActionPerformed
+
+    private void DoctorCommunityInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorCommunityInput1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DoctorCommunityInput1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        jComboBox1.setModel(new DefaultComboBoxModel<String>(Community.communityData.toArray(new String[0]))); 
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,14 +248,17 @@ public class AddDoctorPortal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CloseDoctorButton;
     private javax.swing.JTextField DoctorCommunityInput;
+    private javax.swing.JTextField DoctorCommunityInput1;
     private javax.swing.JLabel DoctorCommunityLabel;
-    private javax.swing.JTextField DoctorContactInput;
+    private javax.swing.JLabel DoctorCommunityLabel1;
     private javax.swing.JLabel DoctorContactLabel;
     private javax.swing.JTextField DoctorHospitalInput;
     private javax.swing.JLabel DoctorHospitalLabel;
     private javax.swing.JTextField DoctorNameInput;
     private javax.swing.JLabel DoctorNameLabel;
+    private javax.swing.JLabel PatientPageLabel;
     private javax.swing.JLabel PatientPortalBackgroundImage;
     private javax.swing.JButton SubmitDoctorButton;
+    private javax.swing.JComboBox<String> jComboBox1;
     // End of variables declaration//GEN-END:variables
 }
